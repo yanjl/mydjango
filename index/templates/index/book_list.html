@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<ul>
+    {%for book in object_list%}
+
+    <li>
+        <a href="{% url 'index:detail' book.pk %}">{{book.name}}
+            <span>({{book.authors__count}})</span>
+        </a>
+
+    </li>
+    {%endfor%}
+</ul>
+
+{% endblock body %}

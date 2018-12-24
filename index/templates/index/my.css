@@ -1,0 +1,28 @@
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bolder;
+    color: blueviolet;
+    background: orange url(../../../static/favicon.ico);
+}
+
+.first{
+    width: 200px;
+    height: 20px;
+    padding: 1%;
+    margin: 0 auto;
+    border: 5px solid yellow;
+    color: #f00;
+    overflow: auto;
+    /* float: right; */
+}
+
+#list{
+    width: 200px;
+    height: 200px;
+    background-color:blue;
+    transform: scale(2);
+    transform: rotate(4);
+    float: right;
+}
+a:link{color:#ff0000;}

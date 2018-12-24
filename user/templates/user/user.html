@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+
+
+{% block body %}
+<h1> Auth</h1>
+{% if tips %}
+{{tips}}
+{% endif %}
+<div class="container">
+    <form actions="" method='post' class="form">
+        {% csrf_token %}
+
+
+        username: <input type="text" name="username">
+        password: <input type="password" name="password">
+        {% if new_password %}
+        new password: <input type="password" name="new_password">
+
+        {% endif %}
+
+
+
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+
+    </form>
+</div>
+<a href="{{unit_2}}">{{unit_2_name}}</a>
+<a href="{{unit_1}}">{{unit_1_name}}</a>
+{% endblock body %}

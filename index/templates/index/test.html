@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- to browser-->
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="my.css" />
+    <link rel="icon" type="image/x-icon" href="../../../static/favicon.ico">
+    <script src="main.js"></script>
+    <!--to serach engine-->
+    <meta name="author" content="www.xxx.com">
+    <meta name="keywords" content="django,web,html5">
+    <meta name="description" content="this is my first web example.">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                One of three columns
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+    <button onclick="!function(){
+        var list = document.getElementById('list')
+        
+        alert(list.innerText)
+        }()">Click
+        me</button>
+    <button onclick="open_window()">openwindows</button>
+
+    <a name="top"></a>
+    <header>web theme</header>
+
+    <hr />
+
+    <form action="" method="POST">
+        Input:
+        <input type="text" list="list">
+        <datalist id="list">
+            <option>123</option>
+            <option>abc</option>
+            <option>456</option>
+            <option>dfe</option>
+        </datalist>
+
+    </form>
+    <nav>menu</nav>
+    <article>main
+        <section>
+            <a name="middle"></a>
+            <h1 class="first">first, you are a student, yes or no. this is one box exaple.</h1>
+            <p>one pragraph one</p>
+            <p>second pragraph<br /> second</p>
+        </section>
+        <section>
+            <h1>second</h1>
+            <pre>
+                *
+            ***********
+                ***
+            </pre>
+        </section>
+    </article>
+    <aside>left side</aside>
+    <hr />
+    <footer>foot</footer>
+
+
+    <div id="list">
+
+        <ol type="1" start="5">
+            <li>one</li>
+            <li>two</li>
+            <li><a href="http://www.baidu.com" target="_blank">Ok</a>three</li>
+            <li><a href="http://www.baidu.com" target="_blank"><img src="../../../static/favicon.ico" title="icon"></a><img
+                    src="../../../static/favicon.ico" title="icon"></li><!-- note. -->
+        </ol>
+    </div>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+    <dl>
+        <dt>list title</dt>
+        <dd>first</dd>
+        <dd>se<div style="width: 100px;height:100px; background-color: blue;">one div</div>
+
+            <div style="width: 200px;height:100px;background-color:red;"> another div</div>
+            cond
+        </dd>
+        <dd>third</dd>
+    </dl>
+    <a href="#top" target="_self">back top</a>
+    <a href="#middle" target="_self">back middle</a><br />
+    <pre><code>def ok():
+print("this is one note.")
+    </code></pre>
+
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input name="user" type="text" placeholder="please input">
+        <input type="password" name="password" placeholder="input password">
+        <!-- <br /> -->
+        <input type="radio" name="sex" checked="checked" value="male">male
+        <input type="radio" name="sex" value="female">female
+
+        <input type="radio" name="sex" value=100>100-age
+        <input type="radio" name="sex" value=99>99-age
+        <hr />
+        <input type="checkbox" name="status" value="on" checked="checked">on
+        <input type="checkbox" name="status" value="off">off
+        <input type="checkbox" name="status" value="yes">yes
+
+
+
+        <input type="reset">
+        <input type="button" value="click me" onclick="alert('this is one button')">
+    </form>
+    <form action="" method="POST" enctype="multipart/form-data">
+        choose file <input type="file">
+        <input type="submit" value="submit">
+    </form>
+    <br />
+    <br />
+    <table style="border:1;width:200px;height:300px;background-color:red;" align="center">
+        <tr>
+            <th>no.</th>
+            <th>&nbsp; name</th>
+            <th>age</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>sinber</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>rita</td>
+            <td>99</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function hello() {
+            var msg = "hello django"
+            alert(window.screen.width)
+
+            console.log(msg)
+        }
+
+        function open_window() {
+            window.open('http://www.baidu.com', 'height=700px, width=1000px, top=200px,left=300px')
+        }
+
+        function yes() {
+            alert("hijack.")
+        }
+
+    </script>
+    <button id="yes" class="btn btn-primary " onclick="yes()">Yes</button>
+    <script type="text/javascript">
+        // var btn = document.getElementById('yes')
+        // btn.onclick = function () {
+        //     alert("clicj me .")
+        // }
+    </script>
+</body>
+
+</html>
