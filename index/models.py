@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.urls import reverse
 from django.utils.functional import cached_property
 
 
@@ -48,6 +49,9 @@ class Publisher(models.Model):
     @cached_property
     def top_ten_books(self):
         return self.book_set.order_by('-rating')[:10]
+
+    def get_absolute_url(self):
+        return reverse('index:book_publisher', kwargs={'pk': self.name})
 
 
 class Book(models.Model):

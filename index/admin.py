@@ -28,7 +28,14 @@ class PublisherAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['name', 'pages', 'price', 'rating', 'publisher', 'pubdate']
+    list_display = [
+        'name',
+        'pages',
+        'price',
+        'rating',
+        'publisher',
+        'pubdate',
+    ]
 
 
 @admin.register(Store)

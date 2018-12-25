@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from .views import (IndexTemplate, ProductDetail, ProductList,
                     PublisherBookList, Top10List, login, mydate)
 
-app_name = "index"  # namespace
+app_name = "index"  # URL namespace
+# namespace = 'index'
 urlpatterns = [
     path("", IndexTemplate.as_view(), name="index_home"),
     path("list/", ProductList.as_view(), name="index_list"),

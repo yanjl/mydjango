@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
 
+
+{% block title %}
+top10
+{% endblock title %}
+
 {% block body %}
 <ul>
     {%for publisher in object_list%}
     <li>
         <h3>{{publisher.name}}</h3>
         <ul>
-            {% for book in publisher.top_ten_books %}
+
+            {% with publisher.top_ten_books as books %}
+            {% for book in books %}
             <li> <a href="{% url 'index:detail' book.pk %}">{{book.name}}({{book.rating}})</a></li>
             {% endfor %}
+            {% endwith %}
+
+
         </ul>
         </a>
     </li>

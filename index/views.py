@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Avg, Count, Max, Min, Sum
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.views.generic import DeleteView, ListView, TemplateView
 
 from .forms import ProductForm, ProductModelForm
@@ -12,7 +13,7 @@ from .models import Author, Book, Product, Publisher
 def home_page(request):
     # return HttpResponse("<h1> you are a student<h1>")
     # 绝对路径
-    return redirect("http://127.0.0.1/user/")
+    return redirect(reverse('user:login'))
 
 
 def mydate(request, year, month, day):
@@ -44,7 +45,7 @@ class Top10List(ListView):
 class PublisherBookList(ListView):
     template_name = 'index/book_list.html'
 
-    def get_queryset(self):
+    def get_queryset(self):  # object_list
         self.publisher = get_object_or_404(
             Publisher, name=self.kwargs['publisher'])
         # Book.objects.annotate(Count('authors'))
@@ -94,7 +95,7 @@ def login(request):
             # name = product.cleaned_data['name']
             # type = product.cleaned_data['type']
             # Product(name=name, type=type).save()
-            return redirect("/index/list/")
+            return redirect(reverse('user:login'))
         else:
             error_msg = product.errors.as_json()
             print(error_msg)

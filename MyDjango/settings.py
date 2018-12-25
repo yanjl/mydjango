@@ -55,6 +55,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = "MyDjango.urls"
 
 TEMPLATES = [{
+    "APP_DIRS":
+    True,
     "BACKEND":
     "django.template.backends.django.DjangoTemplates",
     "DIRS": [
@@ -62,8 +64,6 @@ TEMPLATES = [{
         os.path.join(BASE_DIR, "index/templates"),
         os.path.join(BASE_DIR, "user/templates"),
     ],
-    "APP_DIRS":
-    True,
     "OPTIONS": {
         "context_processors": [
             "django.template.context_processors.debug",
